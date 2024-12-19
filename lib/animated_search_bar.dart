@@ -199,6 +199,8 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
               if (_isSearch.value && _conSearch.text.isNotEmpty) {
                 _conSearch.clear();
                 widget.onChanged?.call(_conSearch.text);
+                 _isSearch.value = !_isSearch.value;
+                if (!_isSearch.value) widget.onClose?.call();
               } else {
                 _isSearch.value = !_isSearch.value;
                 if (!_isSearch.value) widget.onClose?.call();
